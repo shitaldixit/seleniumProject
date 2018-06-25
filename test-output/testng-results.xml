@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="47511" started-at="2018-06-25T11:25:05Z" finished-at="2018-06-25T11:25:53Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="47511" started-at="2018-06-25T11:25:05Z" finished-at="2018-06-25T11:25:53Z">
+      <class name="com.accenture.testing.selenium.BookTicketTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.accenture.testing.selenium.BookTicketTest@26653222]" name="beforeTest" is-config="true" duration-ms="36541" started-at="2018-06-25T16:55:05Z" finished-at="2018-06-25T16:55:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.accenture.testing.selenium.BookTicketTest@26653222]" name="login" duration-ms="9881" started-at="2018-06-25T16:55:43Z" data-provider="logindata" finished-at="2018-06-25T16:55:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[invalidUN]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[invalidPW]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.accenture.testing.selenium.BookTicketTest@26653222]" name="afterTest" is-config="true" duration-ms="0" started-at="2018-06-25T16:55:53Z" finished-at="2018-06-25T16:55:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.accenture.testing.selenium.BookTicketTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

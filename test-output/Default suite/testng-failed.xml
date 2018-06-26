@@ -5,9 +5,9 @@
     <classes>
       <class name="com.accenture.testing.selenium.BookTicketTest">
         <methods>
+          <include name="findFlightDetails"/>
           <include name="beforeTest"/>
           <include name="login"/>
-          <include name="afterTest"/>
         </methods>
       </class> <!-- com.accenture.testing.selenium.BookTicketTest -->
     </classes>

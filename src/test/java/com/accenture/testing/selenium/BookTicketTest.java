@@ -1,26 +1,24 @@
 package com.accenture.testing.selenium;
 
-import org.testng.annotations.Test;
-
-import pages.LoginPageObject;
-import utility.ExcelUtility;
-
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import pages.LoginPageObject;
+import utility.ExcelUtility;
 
 public class BookTicketTest 
 {
@@ -28,13 +26,20 @@ public class BookTicketTest
  private int colNo=2;
  private static int rowNo=0;
  
+
+ private static Logger log = Logger.getLogger(BookTicketTest.class.getSimpleName());
+ 
   @Test(priority=1,dataProvider="logindata")
   public void login(String txtusername,String txtpwd) throws IOException
   {
 	  try
 	  {
+		  log.info("enter username");
+		  
 	  LoginPageObject.uname.sendKeys(txtusername);
+	  log.info("enter password");
 	  LoginPageObject.pwd.sendKeys(txtpwd);
+	  log.info("clicking login ");
 	  LoginPageObject.login.click();
 	  
 	 WebDriverWait wait =new WebDriverWait(driver, 60);
@@ -49,6 +54,7 @@ public class BookTicketTest
 	  }catch(AssertionError e)
 	  {
 		  ExcelUtility.setExcelData(rowNo, colNo, "fail");
+		  log.info("aseert error");
 	  }
 	  finally
 	  {
@@ -98,6 +104,8 @@ public class BookTicketTest
       driver=new ChromeDriver();
       driver.get("http://newtours.demoaut.com");
       PageFactory.initElements(driver, LoginPageObject.class);
+      
+     DOMConfigurator.configure("log4j.xml");
   }
 
   @AfterTest
